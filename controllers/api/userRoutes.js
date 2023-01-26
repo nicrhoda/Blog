@@ -8,3 +8,5 @@ const { User } = require('../../models');
 
 
 //logout route
+
+module.exports = router;
