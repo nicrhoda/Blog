@@ -1,0 +1,17 @@
+[
+    {
+        "heading": "JSON format",
+        "content": "I really enjoy handling data in json format",
+        "user_id": 1
+    },
+    {
+        "heading": "express routes",
+        "content": "express routes sure are fun",
+        "user_id": 2
+    },
+    {
+        "heading": "handlebars",
+        "content": "handlebars sure is intuitive",
+        "user_id": 3
+    }
+]

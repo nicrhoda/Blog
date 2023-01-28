@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
             headers: { 'Content-Type': 'application/json' },
         });
         if(response.ok) {
-            document.location.replace('/homepage');
+            document.location.replace('/');
         } else {
             document.getElementById('formValidation').innerHTML =
             `<div class="alert" role="alert">Incorrect username or password</div>`
