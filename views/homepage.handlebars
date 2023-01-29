@@ -1,7 +1,7 @@
 <div class="allposts">
     {{#each postData as |post|}}
     
-       <h3>{{heading}}</h3>
+       <h3><a href='/singlePost/{{post.id}}'>{{heading}}</a></h3>
         <p>Posted by {{user.username}}</p>
   
         <p>{{content}}</p>

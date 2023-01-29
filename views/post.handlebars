@@ -1,0 +1,43 @@
+<div class="post">
+  <article class="card">
+    <div class="card-header">
+      <h2>{{singlepost.heading}}</h2>
+      <div>
+        Post by {{singlepost.user.username}} 
+      </div>
+    </div>
+    <div class="card-body">
+      {{singlepost.content}}
+    </div>
+  </article>
+
+    <section class="card">
+      <div class="card-header">
+        <h3>Comments</h3>
+      </div>
+
+      <div class="card-body">
+        {{#each singlepost.comments as |comments|}}
+          <h5>{{comments.content}}</h5>
+        {{/each}}
+      </div>
+    </section>
+
+  <form id="commentForm" class="card">
+    <div class="card-header">
+      <h3>Add New Comment</h3>
+    </div>
+
+    <div class="card-body">
+      <input type="hidden" id="postId" value="{{singlepost.id}}" />
+
+      <label class="form-label" for="comment-body">Comment</label>
+
+      <textarea name="comment-body" class="form-input" id="post-content"></textarea>
+
+      <button type="submit" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
+
+<script src="/js/comments.js"></script>

@@ -17,6 +17,7 @@ router.post('/newPost', withAuth, async (req, res) => {
     } catch (err) {
         res.json(err);
     }
-})
+});
+
 
 module.exports = router;
