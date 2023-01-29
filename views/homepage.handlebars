@@ -1,8 +1,10 @@
 <div class="allposts">
     {{#each postData as |post|}}
-    <div class="card-body">
-        <h3 class="username-data">{{post.name}}</h3>
-        <h3 class="post-data">{{post.content}}</h3>
-    </div>
+    
+       <h3>{{heading}}</h3>
+        <p>Posted by {{user.username}}</p>
+  
+        <p>{{content}}</p>
+
     {{/each}}
 </div>

@@ -5,13 +5,33 @@ const { Model } = require('sequelize');
 
 router.get('/', (req, res) => {
     Post.findAll({
-        Include: [User],
-    }).then((data) => {
-        const postData = data.map((post) => post.get({ plain: true }));
-        res.render('homepage', { postData });
-    }).catch((err) => {
-        res.status(500).json(err);
-    });
+            attributes: [
+                'id',
+                'heading',
+                'content'
+            ],
+            include: [{
+                    model: Comments,
+                    attributes: ['id', 'content', 'post_id', 'user_id'],
+                    include: {
+                        model: User,
+                        attributes: ['username']
+                    }
+                },
+                {
+                    model: User,
+                    attributes: ['username']
+                }
+            ]
+        })
+        .then(data => {
+            const postData = data.map(post => post.get({ plain: true }));
+            res.render('homepage', { postData, loggedIn: req.session.loggedIn });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/login', (req, res) => {
@@ -24,15 +44,6 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
     res.render('signup');
-});
-
-router.get('/dashboard', (req, res) => {
-    if(req.session.logged_in) {
-        res.render('dashboard');
-    } else {
-        res.redirect('/login');
-        return;
-    }
 });
 
 

@@ -1,1 +1,22 @@
-<h1>Dashboard stuff</h1>
+<div class="wrapper card">
+<div class="userposts">
+    {{#each userPost as |post|}}
+    <h3>{{post.heading}}</h3>
+    <p>{{post.content}}</p>
+    {{/each}}
+</div>
+<div class="card-header">
+    <h2>New Post</h2>
+</div>
+<form id="newPost" class="card-body">
+    <label class="form-label" for="post-heading">Heading</label>
+    <input type="text" name="post-heading" class="form-input" id="heading"/>
+
+    <label class="form-label" for="post-content">Content</label>
+    <textarea name="post-content" class="form-input" id="content"></textarea>
+
+    <button type="submit" class="newPostButton">Create Post</button>
+</form>
+</div>
+
+<script src="/js/newPost.js"></script>
