@@ -1,0 +1,52 @@
+body {
+    background-color: #ccdad1;
+    margin: 0rem;
+    padding: 0rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #201110;
+    line-height: 1.5;
+    font-size: 24px;
+}
+
+main {
+    margin: 20px;
+    width: 94%;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    font-size: 1.4rem;
+    display: block;
+    padding: 6px;
+    color: #ffffff;
+    background-color: #a1a0a1;
+}
+
+.btn:hover {
+    color: #ccdad1;
+    background-color: #657070;
+}
+
+.card {
+    border: solid;
+    border-radius: .4rem;
+}
+
+.card-header {
+    color: #ccdad1;
+    background-color: #201110;
+    padding: 1%;
+    border-radius: .3rem;
+}
+
+.card-body {
+    padding: 1%;
+}
+

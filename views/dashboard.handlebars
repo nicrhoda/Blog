@@ -3,11 +3,8 @@
     {{#each posts}}
       <h3>{{heading}}</h3>
       <p>{{content}}</p>
-      <a href="/updatePost/{{id}}"><button
-          class="btn"
-          type="button"
-        >Update Post</button></a>
-
+      <a href="/updatePost/{{id}}"><button class="btn" type="button">Update Post</button></a>
+      <a href="/deletePost/{{id}}"><button class="btn" type="button">Delete Post</button></a>
     {{/each}}
   </div>
   <div class="card-header">
@@ -20,7 +17,7 @@
     <label class="form-label" for="post-content">Content</label>
     <textarea name="post-content" class="form-input" id="content"></textarea>
 
-    <button type="submit" class="newPostButton">Create Post</button>
+    <button type="submit" class="newPostButton btn">Create Post</button>
   </form>
 </div>
 
