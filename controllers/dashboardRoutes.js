@@ -9,7 +9,8 @@ router.get('/', withAuth, async (req, res) => {
         }
     }).then((userPost) => {
         const posts = userPost.map((post) => post.get({ plain: true }));
-        res.render('dashboard', { userPost })
+        res.render('dashboard', { posts })
+        console.log(posts);
     })
 });
 

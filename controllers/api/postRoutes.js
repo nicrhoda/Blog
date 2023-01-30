@@ -23,7 +23,7 @@ router.post('/newPost', withAuth, async (req, res) => {
 router.put('/:id', withAuth, async (req, res) => {
     console.log(req.body);
     console.log(req.params.id)
-    if(req.session.user_id == req.body.user_id){
+    if(req.session.user_id === req.body.user_id){
     try {
         const postData = await Post.update(req.body, {
             where: {
@@ -36,7 +36,9 @@ router.put('/:id', withAuth, async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+} else {
+    res.json({ message: 'You must be the author to edit a post' });
 }
-})
+});
 
 module.exports = router;
