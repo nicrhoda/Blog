@@ -19,5 +19,24 @@ router.post('/newPost', withAuth, async (req, res) => {
     }
 });
 
+//update post route
+router.put('/:id', withAuth, async (req, res) => {
+    console.log(req.body);
+    console.log(req.params.id)
+    if(req.session.user_id == req.body.user_id){
+    try {
+        const postData = await Post.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        }).then((newpostData) => {
+            console.log(newpostData);
+            res.status(200).json(newpostData);
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}
+})
 
 module.exports = router;
