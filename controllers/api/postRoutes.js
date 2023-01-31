@@ -41,4 +41,18 @@ router.put('/:id', withAuth, async (req, res) => {
 }
 });
 
+//delete post route
+router.delete('/deletePost/:id', withAuth, async (req, res) => {
+    try {
+    Post.destroy({
+        where: {
+            id: req.params.id
+        }
+   })
+   res.status(200).json({message: 'Post deleted' });
+} catch (err) {
+    res.status(500).json(err);
+}
+})
+
 module.exports = router;

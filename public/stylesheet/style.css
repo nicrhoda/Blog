@@ -13,6 +13,12 @@ main {
     width: 94%;
 }
 
+header {
+    background-color: #201110;
+    color: #ccdad1;
+}
+
+
 .wrapper {
     width: 100%;
     min-height: 100%;

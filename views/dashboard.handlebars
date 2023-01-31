@@ -3,8 +3,9 @@
     {{#each posts}}
       <h3>{{heading}}</h3>
       <p>{{content}}</p>
+      <input type="hidden" id="postId" value="{{id}}" />
       <a href="/updatePost/{{id}}"><button class="btn" type="button">Update Post</button></a>
-      <a href="/deletePost/{{id}}"><button class="btn" type="button">Delete Post</button></a>
+      <button class="btn deleteBtn" type="button">Delete Post</button>
     {{/each}}
   </div>
   <div class="card-header">
@@ -22,3 +23,4 @@
 </div>
 
 <script src="/js/newPost.js"></script>
+<script src="/js/deletePost.js"></script>
